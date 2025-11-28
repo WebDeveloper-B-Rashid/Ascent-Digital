@@ -1,0 +1,209 @@
+ :root {
+            --color-primary: #3f6212; /* Dark Olive Green */
+            --color-secondary: #fef3c7; /* Pale Yellow / Cream */
+            --color-text: #1c1917; /* Stone 900 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text);
+            background-color: #f7f7f7;
+            line-height: 1.6;
+        }
+        .text-primary { color: var(--color-primary); }
+        .bg-primary { background-color: var(--color-primary); }
+        .border-primary { border-color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+
+        /* Custom shadows for a premium feel */
+
+        .premium-shadow {
+            box-shadow: 0 10px 30px rgba(63, 98, 18, 0.1), 0 4px 6px rgba(63, 98, 18, 0.05);
+        }
+        .hero-background {
+            background-image: url('./images/Ancestral-nutrition.jpg'); /* Replace with your actual hero image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* New section */
+          /* Basic Reset and Variables */
+        :root {
+            --color-primary: #007bff; /* Blue for highlights/buttons */
+            --color-secondary: #28a745; /* Green for success/focus */
+            --color-text: #333;
+            --color-bg-light: #f8f9fa;
+            --color-bg-white: #ffffff;
+            --spacing-large: 60px;
+            --spacing-medium: 30px;
+            --spacing-small: 15px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg-white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-large) var(--spacing-medium);
+            background-color: var(--color-bg-light);
+        }
+
+       
+        /* --- Section Header and Intro --- */
+
+        .intro-block {
+            text-align: center;
+            margin-bottom: var(--spacing-large);
+        }
+
+        .intro-block h2 {
+            font-size: 2.5em;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-small);
+        }
+
+        .intro-block p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15em;
+            font-weight: 300;
+            color: #555;
+        }
+
+        /* Highlight Span for **text** */
+        .intro-block p strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* --- Key Features Grid/Blocks --- */
+
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-medium);
+        }
+
+        .feature-item {
+            flex: 1 1 calc(33.333% - var(--spacing-medium) * 2 / 3); /* Distribute items in 3 columns */
+            min-width: 280px; /* Minimum width before wrapping */
+            background-color: var(--color-bg-white);
+            padding: var(--spacing-medium);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: var(--spacing-small);
+        }
+
+        .feature-item h3 {
+            color: var(--color-secondary);
+            font-size: 1.5em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .feature-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: var(--spacing-small);
+        }
+
+        .feature-item ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item ul li::before {
+            content: '✓'; /* Checkmark icon */
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* --- Call to Action/Next Step --- */
+
+        .cta-box {
+            background-color: var(--color-primary);
+            color: var(--color-bg-white);
+            padding: var(--spacing-medium);
+            text-align: center;
+            border-radius: 8px;
+            margin-top: var(--spacing-large);
+        }
+
+        .cta-box p {
+            font-size: 1.25em;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* --- Responsive Adjustments (Media Queries) --- */
+
+        /* Tablet and Smaller Desktop */
+        @media (max-width: 992px) {
+            .feature-item {
+                flex: 1 1 calc(50% - var(--spacing-medium) / 2); /* 2 columns */
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 600px) {
+            .section-container {
+                padding: var(--spacing-medium) var(--spacing-small);
+            }
+
+            .intro-block h2 {
+                font-size: 2em;
+            }
+
+            .feature-item {
+                flex: 1 1 100%; /* Single column */
+                min-width: unset;
+            }
+
+            .intro-block p {
+                font-size: 1em;
+            }
+
+            .cta-box p {
+                font-size: 1.1em;
+            }
+        }
